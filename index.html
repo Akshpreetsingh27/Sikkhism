@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikh Guru's</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color:#f5f5f5;
+            
+        }
+
+        /* Header styling */
+        header {
+            height: 700px;
+            width: 100%;
+            background-image: url('/ekonkar.PNG');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            /* This allows us to position children absolutely within the header */
+        }
+
+        /* Top-left "SIKHISM" text (smaller for logo effect) */
+        .threeD-text-top-left {
+            font-size: 30px;
+            /* Smaller font size for logo */
+            font-weight: bold;
+            color: #fbecf2;
+            /* Light text color */
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+            /* Adding multiple layers of text shadow to give a 3D effect */
+            text-shadow:
+                3px 3px 0 rgba(255, 0, 0, 0.7),
+                6px 6px 0 rgba(0, 255, 0, 0.7),
+                9px 9px 0 rgba(0, 0, 255, 0.7),
+                12px 12px 10px rgba(0, 0, 0, 0.6);
+
+            transform-style: preserve-3d;
+            transform: perspective(600px) rotateX(10deg) rotateY(20deg);
+
+            /* Adding animation for smooth transition */
+            animation: flip3D 3s ease-in-out infinite;
+        }
+
+        @keyframes flip3D {
+            0% {
+                transform: perspective(600px) rotateX(10deg) rotateY(20deg);
+            }
+
+            25% {
+                transform: perspective(600px) rotateX(20deg) rotateY(20deg);
+            }
+
+            50% {
+                transform: perspective(600px) rotateX(10deg) rotateY(90deg);
+            }
+
+            75% {
+                transform: perspective(600px) rotateX(0deg) rotateY(160deg);
+            }
+
+            100% {
+                transform: perspective(600px) rotateX(10deg) rotateY(20deg);
+            }
+        }
+
+        /* Bottom-center "SIKHISM" text (no animation and shifted left) */
+        .threeD-text-bottom-center {
+            font-size: 150px;
+            font-weight: bold;
+            color: hsl(188, 99%, 72%);
+            /* Light text color */
+            position: absolute;
+            bottom: 20px;
+            left: 25%;
+            /* Shifted a little left */
+
+            /* Adding multiple layers of text shadow to give a 3D effect */
+            text-shadow:
+                3px 3px 0 rgba(7, 86, 98, 0.7),
+                6px 6px 0 rgba(26, 10, 10, 0.7),
+                9px 9px 0 rgba(255, 187, 40, 0.858),
+                12px 12px 10px rgba(26, 24, 24, 0.84);
+
+            transform-style: preserve-3d;
+            /* transform: perspective(600px) rotateX(10deg) rotateY(20deg); */
+
+            /* No animation for bottom text */
+            animation: none;
+        }
+
+        .GURUS {
+            background-color: #2c2c2c;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: scale(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            color: #f5f5f5;
+        }
+        body {
+            background-color: #121212;
+            color: #f5a623;
+            overflow-x: hidden;
+            animation: fadeInBody 2s ease-out;
+        }
+        @keyframes fadeInBody {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        header {
+            background-color: #1c1c1c;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            color: #f5f5f5;
+            text-transform: uppercase;
+            animation: slideDown 1s ease-out;
+        }
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .main-container {
+            margin: 50px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #f5a623;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .GURUS:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5);
+        }
+        .package-info {
+            width: 60%;
+        }
+        .package-info h3 {
+            font-size: 2rem;
+            color: #f5a623;
+        }
+        .package-info p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        .package-info .btn {
+            background-color: #f5a623;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #121212;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .package-info .btn:hover {
+            background-color: #ff8a00;
+        }
+        .package-image img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .package-activities {
+            margin-top: 20px;
+        }
+        .activities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .activity {
+            background-color: #444;
+            padding: 5px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+        .activity:hover {
+            background-color: #f5a623;
+            color: #121212;
+        }
+        footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .package-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .package-info {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .package-image img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        main {
+            padding: 20px;
+            color: #f5f5f5;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+        }
+        .paji{
+            padding-top:30px;
+        }
+        .intro h1{
+            text-align: center;
+            color: #f5a623;
+            font-size: 50px;
+            
+        }
+        .intro p{
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="threeD-text-top-left">WAHEGURU</div>
+        <div class="threeD-text-bottom-center">SIKKHISM</div>
+    </header>
+    <main>
+        <div class="intro">
+            <h1>Introduction to Sikhism</h1>
+            <a href="2.html" style="text-decoration: dashed; color: black;">
+                <P>Sikhism is the youngest & 5th largest religion of the world with approximately 50 million sikhs.
+                    Sikhism is a monotheistic religion founded during 15th century in the Punjab region, by Guru Nanak
+                    Dev and continued to progress with their successive Sikh Gurus.
+                    Sikhi comes from the word Sikh and the word Sikh comes from the Sanskrit root which means disciple
+                    or learner. So Sikhism is essentially the path of discipleship. The faith system is based on the
+                    teachings of Guru Nanak Dev and the ten successive Sikh Gurus.
+                    Guru Nanak spread a simple message of Ek Onkar, We are all One, created by the One creator of all
+                    creation. This was at a time when India was being turn apart by castes, sectarianism, religious
+                    fractions, and fanaticism. He aligned with no religion, and respected all religions. He expressed
+                    the reality that there is one God and many path and the Name of God is Truth, Satnam.
+                    The true Sikh remains unattached to worldly things. The Sikh must do his duty to his family and to
+                    the community. The main thing is leading a pure and moral life; full of noble deeds and kind words.
+                    A Sikh does not regard fasting, austerities, pilgrimages, alms-giving and penance as important
+                    things.
+                </P>
+            </a>
+
+        </div>
+
+        <div class="paji">
+            <h2>Who are Sikh's</h2>
+                <P>
+                    “A Sikh is any woman or man whose faith consists of belief in:
+                    One God,
+                    The ten Gurus, from Guru Nanak to Guru Gobind Singh,
+                    The Guru Granth Sahib,
+                    The utterances and teachings of the ten Gurus,
+                    Who has faith in and aspires to take Amrit, initiation ceremony into the Khalsa,
+                    And who does not owe allegiance to any other religion.”
+                </P>
+        </div>
+            <div class="main-container">
+                <h2>SIKH GURU'S</h2>
+
+                <!-- GURU NANAK DEVJI -->
+                <div class="GURUS">
+                    <div class="package-info">
+                        <h3>GURU NANAK DEVJI </h3>
+                        <p><strong>BORN:</strong> 15 April 1469 </p>
+                        <p><strong>Fathers Name:</strong> Mehta Kalyan Das</p>
+                        <p><strong>Mothers Name:</strong> Mata Tripata</p>
+                        <p><strong>Jyoti Jyot:</strong> September 22, 1539</p>
+                        <div class="package-activities">
+                            <div class="activities">
+                                <div class="activity">
+                                    <a href="aboutgurunank.html" target="_blank" class="avtivity-link">Children's Name</a> 
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutgurunank.html" target="_blank" class="avtivity-link">Cities Found</a>
+                                 </div>
+                                <div class="activity">
+                                    <a href="aboutgurunank.html" target="_blank" class="avtivity-link">Message</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="aboutgurunank.html" class="btn">Know More </a>
+                    </div>
+                    <div class="package-image">
+                        <img src="GURUNANK.jpg" alt="GURU-NANAK" height="200" width="200">
+                    </div>
+                </div>
+
+                <!-- Guru Angad DevJi -->
+                <div class="GURUS">
+                    <div class="package-info">
+                        <h3>GURU ANGAD DEV JI</h3>
+                        <p><strong>Born:</strong>March 31, 1504</p>
+                        <p><strong>Father Name:</strong> Bhai Pheru Mall </p>
+                        <p><strong>Mother Name:</strong> Mata Sabhrai </p>
+                        <p><strong>Jyoti Jyot:</strong> April 16, 1552 </p>
+                        <div class="package-activities">
+                            <div class="activities">
+                                <div class="activity">
+                                    <a href="aboutguruangad.html" target="_blank" class="avtivity-link">Children's Name</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutguruangad.html" target="_blank" class="avtivity-link">Banis</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutguruangad.html" target="_blank" class="avtivity-link">Message</a></div>
+                            </div>
+                        </div>
+                        <a href="aboutguruangad.html" class="btn">Know More</a>
+                    </div>
+                    <div class="package-image">
+                        <img src="guru-angad.webp" alt="GURU ANGAD DEVJI" height="200" width="200">
+                    </div>
+                </div>
+
+                <!-- GURU AMARDAS JI -->
+                <div class="GURUS">
+                    <div class="package-info">
+                        <h3>GURU AMAR DASJI</h3>
+                        <p><strong>Born:</strong> May 23, 1479</p>
+                        <p><strong>Father Name:</strong> Tej Bhan </p>
+                        <p><strong>Mother Name:</strong> Mata Bakht</p>
+                        <p><strong>Jyoti Jyot:</strong> September 16, 1574 </p>
+                        <div class="package-activities">
+                            <div class="activities">
+                                <div class="activity">
+                                    <a href="aboutguruamardasji.html" target="_blank" class="avtivity-link">Children's Name</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutguruamardasji.html" target="_blank" class="avtivity-link">Banis</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutguruamardasji.htm" target="_blank" class="avtivity-link">Message</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="aboutguruamardasji.html" class="btn">Know More</a>
+                    </div>
+                    <div class="package-image">
+                        <img src="AMARDAS JI.jpg" alt="GURU AMARDAS JI" height="200" width="200">
+                    </div>
+                </div>
+                <!-- GURU RAMDASS JI -->
+                <div class="GURUS">
+                    <div class="package-info">
+                        <h3>GURU RAMDAS JI</h3>
+                        <p><strong>Born:</strong> September 24, 1534</p>
+                        <p><strong>Fathers Name:</strong> Hari Das </p>
+                        <p><strong>Mothers Name:</strong> </p>
+                        <p><strong>Jyoti Jyot:</strong> Boat ride, AC Sedan</p>
+                        <div class="package-activities">
+                            <div class="activities">
+                                <div class="activity">
+                                    <a href="aboutgururamdasji.html" target="_blank" class="avtivity-link">Children's Name</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutgururamdasji.html" target="_blank" class="avtivity-link">Banis</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutgurRAMDASaboutgururamdasji.html" target="_blank" class="avtivity-link">Message</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="aboutgururamdasji.html" class="btn">Know More</a>
+                    </div>
+                    <div class="package-image">
+                        <img src="RAMDAS JI.jpg" alt="GURU RAMDASS JI" height="200" width="200">
+                    </div>
+                </div>
+                <!-- GURU ARJAN DEVJI-->
+                <div class="GURUS">
+                    <div class="package-info">
+                        <h3>GURU ARJAN DEVJI</h3>
+                        <p><strong>Born:</strong>April 15, 1565</p>
+                        <p><strong>Father Name:</strong> GURU RAMDAS JI </p>
+                        <p><strong>Mother Name:</strong> MATA BHANI </p>
+                        <p><strong>Jyoti Jyot:</strong> MAY 30, 1606</p>
+                        <div class="package-activities">
+                            <div class="activities">
+                                <div class="activity">
+                                    <a href="guruarjandevji.html" target="_blank" class="avtivity-link">Children's Name</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="guruarjandevji.html" target="_blank" class="avtivity-link">Banis</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="guruarjandevji.html" target="_blank" class="avtivity-link">Message</a>
+                                </div>
+                            </div>    
+                        </div>
+                        
+                        <a href="guruarjandevji.html" class="btn">Know More</a>
+                    </div>
+                    <div class="package-image">
+                        <img src="ARJUNDEV JI.jpg" alt="GURU ARJAN DEVJI" height="200" width="200">
+                    </div>
+                </div>
+                <!-- GURU HARGOBIND SAHIIB JI -->
+                <div class="GURUS">
+                    <div class="package-info">
+                        <h3>GURU HARGOBIND SAHIBJI</h3>
+                        <p><strong>Born:</strong> July 5, 1565</p>
+                        <p><strong>Fathers Name:</strong>Guru ArjanDev JI</p>
+                        <p><strong>Mothers Name:</strong> Mata Ganga Devi </p>
+                        <p><strong>Jyoti Jyot:</strong> March 3, 1644</p>
+                        <div class="package-activities">
+                            <div class="activities">
+                                <div class="activity">
+                                    <a href="aboutharkrishan.html" target="_blank" class="avtivity-link">Children's Name</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutharkrishan.html" target="_blank" class="avtivity-link">Banis</a>
+                                </div>
+                                <div class="activity">
+                                    <a href="aboutharkrishan.html" target="_blank" class="avtivity-link">Cities Found</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="aboutguruhargobind.html" class="btn">Know More</a>
+                    </div>
+                    <div class="package-image">
+                        <img src="HARGOBIND SAHIBJI.jpg" alt="Varanasi" height="200" width="200">
+                    </div>
+                </div>
+
+        <!-- GURU HARRAI JI -->
+        <div class="GURUS">
+            <div class="package-info">
+                <h3>GURU HARRAI JI</h3>
+                <p><strong>Born:</strong>February 26, 1630</p>
+                <p><strong>Fathers Name:</strong> Baba Gurditta JI</p>
+                <p><strong>Mothers Name:</strong> Mata Nihal Kaur</p>
+                <p><strong>Jyoti Jyot:</strong> October 6, 1661</p>
+                <div class="package-activities">
+                    <div class="activities">
+                        <div class="activity">
+                            <a href="aboutharraiji.html" target="_blank" class="avtivity-link">Children's Name</a>
+                        </div>
+                        <div class="activity">
+                            <a href="aboutharraiji.html" target="_blank" class="avtivity-link">Banis</a>
+                        </div>
+                        <div class="activity">
+                            <a href="abouhaaboutharraiji.html" target="_blank" class="avtivity-link">Special Contribution</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="aboutharraiji.html" class="btn">Know More</a>
+            </div>
+            <div class="package-image">
+                <img src="HARRAI JI.jpg" alt="GURUHARRAIJI" height="200" width="200">   
+            </div>
+        </div>
+               <!-- HARKRISHAN SAHIBJI-->
+               <div class="GURUS">
+                <div class="package-info">
+                    <h3>GURU HARKRISHAN SAHIB JI</h3>
+                    <p><strong>Born:</strong>July 7, 1656</p>
+                    <p><strong>Fathers Name:</strong> GURU HAR RAI JI</p>
+                    <p><strong>Mothers Name:</strong> MATA KISHAN KAUR</p>
+                    <p><strong>Jyoti Jyot:</strong> MARCH 30, 1664</p>
+                    <div class="package-activities">
+                        <div class="activities">
+                            <div class="activity">
+                                <a href="aboutharkrishan.html" target="_blank" class="avtivity-link">Accession to Gaddi</a>
+                            </div>
+                            <div class="activity">
+                                <a href="aboutharkrishan.html" target="_blank" class="avtivity-link">Banis</a>
+                            </div>
+                            <div class="activity">
+                                <a href="aboutharkrishan.html" target="_blank" class="avtivity-link">Special Contribution</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <a href="aboutharkrishan.html" class="btn">Know More</a>
+                </div>
+                <div class="package-image">
+                    <img src="guru-har-krishan.webp" alt="HARKRISHAN SAHIBJI" height="200" width="200">
+                </div>
+            </div>
+ <!---GURU TEGBAHADUR SAHIB JI-->
+        <div class="GURUS">
+            <div class="package-info">
+                <h3>GURU TEG BAHADUR JI</h3>
+                <p><strong>Born:</strong> April 18, 1621</p>
+                <p><strong>Fathers Name:</strong> GURU HARGOBIND SINGH JI</p>
+                <p><strong>Mothers Name:</strong> MATA NANAKI</p>
+                <p><strong>Jyoti Jyot:</strong> NOVEMBER 11, 1675</p>
+                <div class="package-activities">
+                    <div class="activities">
+                        <div class="activity">
+                            <a href="abouttegbahadur.html" target="_blank" class="avtivity-link">Children's Name</a>
+                        </div>
+                        <div class="activity">
+                            <a href="abouttegbahadur.html" target="_blank" class="avtivity-link">Banis</a>
+                        </div>
+                        <div class="activity">
+                            <a href="abouttegbahadur.html" target="_blank" class="avtivity-link">Special Contribution</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="abouttegbahadur.html" class="btn">Know More</a>
+            </div>
+            <div class="package-image">
+                <img src="GURUTEG BAHADUR JI.jpg" alt="GURU TEG BAHADUR SAHIBJI" height="200" width="200">
+            </div>
+        </div>
+            <!-- GURU GOBIND SINGH SAHIB JI -->
+            <div class="GURUS">
+                <div class="package-info">
+                    <h3>GURU GOBIND SINGH SAHIB JI</h3>
+                    <p><strong>Born:</strong>DECEMBER 22, 1666</p>
+                    <p><strong>Fathers Name:</strong> GURU TEG BAHADUR JI</p>
+                    <p><strong>Mothers NAme:</strong> MATA GUJARI KAUR </p>
+                    <p><strong>Jyoti Jyot:</strong>OCTOBER 7, 1708</p>
+                    <div class="package-activities">
+                        <div class="activities">
+                            <div class="activity">
+                                <a href="aboutgobindsinghji.html" target="_blank" class="avtivity-link">Children's Name</a>
+                            </div>
+                            <div class="activity">
+                                <a href="aboutgobindsinghji.html" target="_blank" class="avtivity-link">Banis</a>
+                            </div>
+                            <div class="activity">
+                                <a href="aboutgobindsinghji.html" target="_blank" class="avtivity-link">Special Contribution</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="aboutgobindsinghji.html" class="btn">Know More</a>
+                </div>
+                <div class="package-image">
+                    <img src="GURU GOBIND SINGH JI.jpg" alt="GURU GOBIND SINGH JI">
+                </div>
+            </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sikh Guru's. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
